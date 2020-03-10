@@ -16,10 +16,9 @@ export default new Vuex.Store({
         userData.token
       }`
     },
-    CLEAR_USER_DATA(state) {
-      state.user = ''
-      localStorage.remoteItem('user')
-      axios.defaults.headers.common['Authorization'] = null
+    CLEAR_USER_DATA() {
+      localStorage.removeItem('user')
+      location.reload()
     }
   },
   actions: {
